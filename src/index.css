@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}
+
+.reveal-text {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.reveal-text:nth-child(1) { animation-delay: 1s; }
+.reveal-text:nth-child(2) { animation-delay: 1.5s; }
+.reveal-text:nth-child(3) { animation-delay: 2s; }
+
+.reveal-text.reveal-again {
+  animation-delay: 2.5s;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans Variable', sans-serif;
+}
